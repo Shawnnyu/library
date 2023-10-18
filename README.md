@@ -12,6 +12,10 @@
 
 - HTML5, CSS, Javascript
 
+## Live Demo
+
+- [Demo](https://shawnnyu.github.io/library/)
+
 ## My projects
 
 - [Portfolio](https://shawnnyu.github.io/portfolio/)
