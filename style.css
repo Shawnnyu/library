@@ -1,0 +1,327 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+:root {
+  font-family: "Roboto", sans-serif;
+  --heading-color: #ffffff;
+  --book-padding: 16px;
+  --body-gradient-1: #1b0e0e;
+  --body-gradient-2: #5f4e4e;
+  --button-color: #6b5a5a;
+  --button-gradient: #db9b474d;
+  --book-color: #db9b47cb;
+  --box-shadow: 4px 4px 10px black;
+  --heading-color: rgb(43, 43, 43);
+}
+
+body {
+  min-height: 100vh;
+  background-image: linear-gradient(to top, var(--body-gradient-1), var(--body-gradient-2));
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+#library-container {
+  position: relative;
+  padding-left: 40px;
+  padding-top: 40px;
+  padding-right: 40px;
+}
+
+#books-count {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+}
+
+header {
+  position: relative;
+  background-color: var(--heading-color);
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 18px;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  letter-spacing: 0.15rem;
+}
+
+nav {
+  position: absolute;
+  left: 20%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+select {
+  color: white;
+  background-color: var(--heading-color);
+  border: none;
+  font-size: 1rem;
+  cursor: inherit;
+  line-height: inherit;
+}
+
+.book {
+  position: relative;
+  padding: var(--book-padding);
+  border-radius: 24px;
+  width: 400px;
+  height: 500px;
+  font-size: 1.5rem;
+  color: white;
+  box-shadow: var(--box-shadow);
+  background-color: var(--book-color);
+}
+
+.have-read {
+  box-shadow: 0 0 10px 10px greenyellow;
+}
+
+label {
+  font-size: 1.5rem;
+}
+
+.title,
+.info {
+  overflow: auto;
+}
+
+.info > p:first-child {
+  overflow: auto;
+  max-height: 150px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.15rem;
+  text-align: center;
+  height: 40%;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  border-radius: 24px;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+  background-color: var(--book-color);
+}
+
+::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 24px rgba(0, 0, 0, 0.3);
+  border-radius: 24px;
+}
+
+.info {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 90%;
+}
+
+.deleteBtn {
+  position: absolute;
+  padding: 5px;
+  height: 55px;
+  width: 55px;
+  border-radius: 24px 0px 24px 0;
+  border-style: none;
+  text-align: center;
+  bottom: 0;
+  right: 0;
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+  background-color: var(--button-color);
+}
+
+.deleteBtn:hover {
+  background-color: rgb(150, 39, 39);
+}
+
+.book p {
+  margin-bottom: 10px;
+}
+
+.book input {
+  width: 2rem;
+  height: 2rem;
+  vertical-align: bottom;
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+#books-container {
+  display: grid;
+  gap: 32px;
+  row-gap: 48px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+
+.button-container {
+  width: 400px;
+  height: 500px;
+  padding: 24px;
+}
+
+#newBookBtn {
+  height: 100%;
+  width: 100%;
+  border-radius: 24px;
+  border-style: none;
+  -moz-border-radius: 24px;
+  color: white;
+  font-size: 10rem;
+}
+
+.newBookSticky {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  height: 100vh;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border-style: none;
+  font-size: 3rem;
+  color: white;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.newBookSticky:hover,
+#newBookBtn:hover {
+  background-size: 100% 100%;
+  transform: translateY(-10px);
+  transition: background-size 0.1s, transform 0.3s;
+}
+
+.newBookSticky,
+#newBookBtn {
+  background-color: var(--button-color);
+  background-image: linear-gradient(var(--button-gradient), var(--button-gradient));
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  transition: background-size 0.05s, transform 0.3s;
+  -moz-box-shadow-bottom: var(--box-shadow);
+  -webkit-box-shadow-bottom: var(--box-shadow);
+  box-shadow: var(--box-shadow);
+}
+
+dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 500px;
+  text-align: center;
+  padding: 24px;
+  border-radius: 24px;
+  border: none;
+  background-color: var(--body-gradient-1);
+  color: white;
+  box-shadow: 0 0 20px white;
+}
+
+dialog::backdrop {
+  backdrop-filter: blur(10px);
+}
+
+dialog p {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  gap: 8px;
+}
+
+dialog input:not([type="checkbox"]) {
+  border-style: none;
+  border: none;
+  background-color: var(--body-gradient-1);
+  border-bottom: 1px solid var(--body-gradient-2);
+  padding-bottom: 2px;
+  width: 80%;
+  color: white;
+  align-self: center;
+  font-size: 1rem;
+}
+
+input[type="checkbox"] {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form div:nth-child(3) {
+  flex-direction: row;
+  margin-top: 50px;
+  width: 80%;
+  align-self: center;
+  gap: 8px;
+}
+
+form div:nth-child(3) input[type="number"] {
+  width: 50px;
+}
+
+#completed {
+  margin-right: auto;
+}
+
+dialog input:focus {
+  outline: none;
+  border-bottom: 2px solid #ffffff;
+}
+
+label[for="new-pages"] {
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.buttons {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.buttons button {
+  width: 60%;
+  height: 40px;
+  border-radius: 24px;
+  border-style: solid;
+  border-color: white;
+  background: none;
+  color: white;
+  font-size: 1rem;
+}
+
+.buttons button:hover {
+  background-color: var(--button-gradient);
+}

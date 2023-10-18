@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Library</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <script src="script.js" async defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <label for="filter">Filter</label>
+        <select>
+          <option value="default">Choose...</option>
+          <option>A-Z</option>
+          <option>Z-A</option>
+          <option>Read books</option>
+          <option>Unread books</option>
+          <option>Newest</option>
+          <option>Oldest</option>
+        </select>
+      </nav>
+      <div class="heading">
+        <h1>Library</h1>
+      </div>
+    </header>
+    <div id="library-container">
+      <div id="books-count"></div>
+      <div id="books-container">
+        <div class="button-container"><button id="newBookBtn">+</button></div>
+      </div>
+      <button class="newBookSticky">+</button>
+    </div>
+
+    <dialog id="bookDialog">
+      <p>New Book</p>
+      <form id="newBookForm" method="dialog">
+        <div class="form-cell">
+          <label for="new-title">Title</label>
+          <input type="text" id="new-title" name="new-title" autocomplete="off" required />
+        </div>
+        <div class="form-cell">
+          <label for="new-author">Author</label>
+          <input type="text" id="new-author" name="new-author" autocomplete="off" required />
+        </div>
+        <div class="form-cell">
+          <label for="new-pages">Pages</label>
+          <input type="number" id="new-pages" name="new-pages" autocomplete="off" required />
+          <label for="completed">Finished</label>
+          <input type="checkbox" id="completed" name="completed" autocomplete="off" />
+        </div>
+        <div class="buttons">
+          <button id="cancelBtn" type="button" value="cancel">Cancel</button>
+          <button id="submitBtn" type="submit" value="default">Submit</button>
+        </div>
+      </form>
+    </dialog>
+  </body>
+</html>
